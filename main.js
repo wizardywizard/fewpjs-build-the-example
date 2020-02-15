@@ -4,7 +4,16 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-
+fetch(url, config) 
+  .then(function(response){
+    return responce.json();
+  })
+  .then(function(heart) {
+    document.body.innerHTML = heart["id"]
+  })
+  .catch(function(error){
+    document.querySelector('modal')
+  })
 
 
 //------------------------------------------------------------------------------
