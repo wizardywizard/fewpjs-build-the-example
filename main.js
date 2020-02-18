@@ -4,16 +4,20 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-fetch(url, config) 
-  .then(function(response){
-    return responce.json();
-  })
-  .then(function(heart) {
-    document.body.innerHTML = heart["id"]
-  })
-  .catch(function(error){
-    document.querySelector('modal')
-  })
+let newPromise = fetch(mimicServerCall) 
+   .then(function(response){
+     return response
+   })   
+   .catch(function(error){
+     debugger
+    let mod = document.getElementById('modal')
+    mod.className=""
+    let modm = document.getElementById('modal-message')
+    modm.append(error)
+    setTimeout(function() {
+     mod.className='hidden'     
+    }, 5000) 
+   })
 
 
 //------------------------------------------------------------------------------
